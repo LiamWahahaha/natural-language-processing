@@ -1,11 +1,30 @@
-import nltk
-text = "This is Liam's text, isn't it?"
+from nltk.tokenize import sent_tokenize, word_tokenize, WordPunctTokenizer, WhitespaceTokenizer, TreebankWordTokenizer
 
-tokenizer = nltk.tokenize.WhitespaceTokenizer()
-print('WhitespaceTokenizer:', tokenizer.tokenize(text))
+# Define input text
+input_text = "Do you know how tokenization workds? It's actually quite interesting! Let's analyze a couple of" \
+             " sentences and figure it out."
 
-tokenizer = nltk.tokenize.TreebankWordTokenizer()
-print('TreebankWordTokenizer:', tokenizer.tokenize(text))
+# Sentence tokenizer
+print('\nSentence tokenizer:')
+print(sent_tokenize(input_text))
 
-tokenizer = nltk.tokenize.WordPunctTokenizer()
-print('WordPunctTokenizer:', tokenizer.tokenize(text))
+print('\nWord tokenizer:')
+print(word_tokenize(input_text))
+
+print('\nWord punct tokenizer:')
+print(WordPunctTokenizer().tokenize(input_text))
+
+print('\nTree bank word tokenizer:')
+print(TreebankWordTokenizer().tokenize(input_text))
+
+print('\nWhite space tokenizer:')
+print(WhitespaceTokenizer().tokenize(input_text))
+
+#tokenizer = WhitespaceTokenizer()
+#print('WhitespaceTokenizer:', tokenizer.tokenize(input_text))
+
+#tokenizer = TreebankWordTokenizer()
+#print('TreebankWordTokenizer:', tokenizer.tokenize(input_text))
+
+#tokenizer = WordPunctTokenizer()
+#print('WordPunctTokenizer:', tokenizer.tokenize(input_text))
